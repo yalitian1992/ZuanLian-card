@@ -1,0 +1,1092 @@
+/*宝箱*/
+.screenMask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none;
+  opacity: 0;
+  z-index: 9999;
+}
+
+.box {
+  padding: .6rem 0 3.57rem;
+  position: relative;
+}
+
+.box.special {
+  z-index: 1115;
+}
+
+.box .ston-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 9.06rem;
+  background: url("../images/box--bottom-bg.png") no-repeat 0/100% 100%;
+}
+
+.keyamount {
+  margin: 0 auto .54rem;
+  height: .73rem;
+  line-height: .73rem;
+  width: 8.15rem;
+  font-size: .48rem;
+  color: #fff;
+  background: url("../images/notice-bg.png") no-repeat 0/100% 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.keyamount span {
+  width: .55rem;
+  height: .53rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: .1rem;
+  margin-right: .06rem;
+  background: url("../images/openBox-icon-key-amount.png") no-repeat 0/.55rem 100%;
+}
+
+.keyamount div {
+  display: inline-block;
+  margin-left: .18rem;
+  width: .5rem;
+  height: .5rem;
+  margin-top: .11rem;
+  vertical-align: top;
+  background: url("../images/go-yz.png") no-repeat 0/100% 100%;
+}
+
+/*.treasure-box li {
+  width: 6.32rem;
+  height: 5.3rem;
+  margin: 0 auto;
+}
+
+.treasure-box li img {
+  height: 100%;
+}*/
+
+.treasure-box li {
+  z-index: 50;
+  width: 4.38rem;
+  height: 5.3rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.treasure-box li img {
+  position: absolute;
+}
+
+.treasure-box li .boxall {
+  width: 4.38rem;
+  height: 5.3rem;
+}
+
+.treasure-box li img.top {
+  height: 2.79rem;
+  width: 4.38rem;
+  z-index: 2;
+}
+
+.treasure-box li img.bottom {
+  top: .75rem;
+  height: 3.70rem;
+  width: 4.28rem;
+}
+
+.treasure-box li .mask {
+  position: fixed;
+  top: 0;
+  background: black;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.treasure-box li img.lightyellow, .treasure-box li img.lightwhite {
+  width: 4.38rem;
+  height: 5.3rem;
+  top: 0;
+  opacity: 0;
+}
+
+.treasure-box li img.lightwhite {
+  z-index: 5;
+}
+
+.treasure-box li img.card1, .treasure-box li img.card2, .treasure-box li img.card3 {
+  top: 0;
+  opacity: 0;
+  width: 4.38rem;
+  height: 4.38rem;
+}
+
+.cardList {
+  -webkit-overflow-scrolling: touch;
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  z-index: 70;
+  overflow-y: scroll;
+  filter: blur(3px);
+}
+
+.cardList.hide {
+  display: block;
+  opacity: 0;
+  filter: blur(3px);
+}
+
+.cardList.show {
+  display: block;
+  opacity: 1;
+  filter: blur(0px);
+  animation: cardlist .3s linear 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cardlist {
+  0% {
+    transform: translate(0, 0%);
+    filter: blur(3px);
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: blur(0px);
+  }
+}
+
+.cardList li {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 50%;
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
+  transition: all .5s;
+  /* background: url(../img/1.png); */
+  transform: translateZ(5rem);
+}
+
+.cardList .award-detail {
+  width: 6.6rem;
+  height: 6.6rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.cardList .award-detail p {
+  width: 6.6rem;
+  height: 1.5rem;
+  position: absolute;
+  bottom: -1.7rem;
+  color: #fff;
+  font-size: .54rem;
+  line-height: .75rem;
+  text-align: center;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.cardList li.active .award-detail p {
+  opacity: 1;
+}
+
+.cardList li img {
+  width: 6.6rem;
+  height: 6.6rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  opacity: 1;
+  transform: rotateY(270deg);
+  z-index: 1;
+}
+
+.cardList li .nomalBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 6.6rem;
+  height: 6.6rem;
+  opacity: 1;
+  background: url(../images/openBox-bg-back.png) no-repeat center/6.6rem 6.6rem;
+}
+
+/* .cardList li.active .nomalBg {
+  transform: rotateY(180deg);
+  opacity: 0;
+  background: url(../images/openBox-bg-back.png) no-repeat center/6.6rem 6.6rem;
+} */
+
+.cardList li .prizeBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 8.08rem;
+  height: 8.08rem;
+  opacity: 0;
+  z-index: 555;
+}
+
+.cardList li.level1 .prizeBg {
+  transform: rotateY(180deg);
+  opacity: 0;
+  background: url(../images/openbg-level1.png) no-repeat center/8.08rem 8.08rem;
+}
+
+.cardList li.level2 .prizeBg {
+  transform: rotateY(270deg);
+  /* opacity: 0; */
+  background: url(../images/openbg-level2.png) no-repeat center/8.08rem 8.08rem;
+}
+
+.cardList li.level3 .prizeBg {
+  transform: rotateY(270deg);
+  /* opacity: 1; */
+  background: url(../images/openbg-level3.png) no-repeat center/8.08rem 8.08rem;
+}
+
+.cardList li.level1 .light-front, .cardList li.level1 .light-behind {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  width: 9rem;
+  height: 9rem;
+  opacity: 0;
+}
+
+.cardList li.active.level1 .light-front {
+  z-index: 5;
+  background: url(../images/bigprizelight.png) no-repeat center/8.08rem 8.08rem;
+}
+
+.cardList li.active.level1 .light-behind {
+  background: url(../images/bigprizelight.png) no-repeat center/8.08rem 8.08rem;
+  z-index: 0;
+}
+
+.cardList li.level2.active .nomalBg, .cardList li.level3.active .nomalBg {
+  animation: nomalflip-bg .5s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.cardList li.level2.active .prizeBg, .cardList li.level3.active .prizeBg {
+  animation: nomalflip-border .5s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.cardList li.level2.active img, .cardList li.level3.active img {
+  animation: nomalflip-award .5s linear 1;
+  animation-fill-mode: forwards;
+}
+
+/* 大奖翻牌部分 */
+.cardList li.level1.active {
+  perspective: 500;
+  -webkit-perspective: 500; /* Safari 和 Chrome */
+}
+
+.cardList li.level1.active .light-front {
+  animation: cardFlip-light-front 2.84s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.cardList li.level1.active .light-behind {
+  animation: cardFlip-light-behind 2.84s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.cardList li.level1.active .nomalBg {
+  animation: cardFlip-nomalBg 2.84s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.cardList li.level1.active .prizeBg {
+  animation: cardFlip-prizeBg 2.84s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.cardList li.level1.active img {
+  opacity: 1;
+  animation: cardFlip-prizeBg 2.84s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.shake.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: shake 2.84s linear 1;
+  animation-fill-mode: forwards;
+}
+
+/****************************** 翻牌动画 */
+/* 前光 */
+@keyframes cardFlip-light-front {
+  1% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg) scale(0.95);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translate(0.0rem, 0.0rem) scale(1)
+  }
+  36% {
+    transform: translate(-0.02rem, -0.01rem)
+  }
+  39% {
+    transform: translate(0.01rem, 0.02rem)
+  }
+  43% {
+    transform: translate(-0.04rem, -0.02rem)
+  }
+  48% {
+    transform: translate(-0.02rem, 0.0rem);
+  }
+  53% {
+    transform: translate(0.01rem, -0.01rem)
+  }
+  60% {
+    transform: translate(0.0rem, 0.0rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0.0rem, 0.0rem);
+    opacity: 0;
+  }
+}
+
+/* 后光 */
+@keyframes cardFlip-light-behind {
+  1% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  31% {
+    transform: scale(1.05)
+  }
+  33% {
+    transform: translate(0.0rem, 0.0rem) scale(1.05)
+  }
+  36% {
+    transform: translate(-0.02rem, -0.01rem)
+  }
+  39% {
+    transform: translate(0.01rem, 0.02rem)
+  }
+  40% {
+    transform: scale(1.4)
+  }
+  41% {
+    opacity: 0.5;
+  }
+  43% {
+    transform: translate(-0.04rem, -0.02rem)
+  }
+  47% {
+    opacity: 1;
+  }
+  48% {
+    transform: translate(-0.02rem, 0.0rem)
+  }
+  53% {
+    transform: translate(0.01rem, -0.01rem) scale(1.3)
+  }
+  60% {
+    transform: translate(0.0rem, 0.0rem) scale(1.05)
+  }
+  68% {
+    opacity: 1;
+  }
+  69% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(10deg) scale(1.05);
+    opacity: 0;
+  }
+}
+
+/* 奖品背景 */
+@keyframes cardFlip-nomalBg {
+  1% {
+    transform: translate(0.0rem, 0.0rem) translateZ(0rem) scale(1);
+    opacity: 1;
+  }
+  33% {
+    transform: translate(0.0rem, 0.0rem) rotateY(0deg);
+  }
+  36% {
+    transform: translate(-0.02rem, -0.01rem)
+  }
+  39% {
+    transform: translate(0.01rem, 0.02rem)
+  }
+  43% {
+    transform: translate(-0.04rem, -0.02rem)
+  }
+  48% {
+    transform: translate(-0.02rem, 0.0rem)
+  }
+  53% {
+    transform: translate(0.01rem, -0.01rem) scale(1.3);
+    opacity: 1
+  }
+  60% {
+    transform: translate(0.0rem, 0.0rem) translateZ(5rem) rotateY(90deg) scale(1);
+    opacity: 1;
+  }
+  61% {
+    opacity: 0
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+/* 奖品 */
+@keyframes cardFlip-prizeBg {
+  0% {
+    transform: translateZ(0rem);
+    opacity: 0;
+  }
+  59% {
+    opacity: 0;
+  }
+  60% {
+    transform: translate(0.0rem, 0.0rem) translateZ(5rem) rotateY(270deg) scale(1.3);
+    opacity: 1;
+  }
+  69% {
+    transform: rotateY(360deg) scale(1.5)
+  }
+  88% {
+    opacity: 1;
+  }
+  91% {
+    transform: scale(1.5)
+  }
+  95% {
+    transform: scale(1)
+  }
+  100% {
+    transform: translateZ(0rem) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 屏幕抖动 */
+@keyframes shake {
+  1% {
+    transform: translate(0.0rem, 0.0rem) scale(1)
+  }
+  33% {
+    transform: translate(0.0rem, 0.0rem) scale(1)
+  }
+  36% {
+    transform: translate(-0.02rem, -0.01rem) scale(1.02)
+  }
+  39% {
+    transform: translate(0.01rem, 0.02rem) scale(1.01)
+  }
+  43% {
+    transform: translate(-0.04rem, -0.02rem) scale(0.98)
+  }
+  48% {
+    transform: translate(-0.02rem, 0.0rem) scale(1.01)
+  }
+  53% {
+    transform: translate(0.01rem, -0.01rem) scale(0.99)
+  }
+  60% {
+    transform: translate(0.0rem, 0.0rem) scale(1)
+  }
+  84% {
+    transform: translate(0.0rem, 0.0rem)
+  }
+  85% {
+    transform: translate(0.01rem, 0.01rem)
+  }
+  87% {
+    transform: translate(-0.04rem, -0.02rem)
+  }
+  88% {
+    transform: translate(0.0rem, 0.0rem)
+  }
+}
+
+@keyframes nomalflip-bg {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateY(90deg);
+    opacity: 1
+  }
+  50.1% {
+    transform: rotateY(90deg);
+    opacity: 0
+  }
+  100% {
+    transform: rotateY(90deg);
+    opacity: 0
+  }
+}
+
+@keyframes nomalflip-award {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: rotateY(270deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes nomalflip-border {
+  1% {
+    transform: rotateY(90deg);
+    opacity: 0
+  }
+  50% {
+    transform: rotateY(90deg);
+    opacity: 0
+  }
+  51% {
+    transform: rotateY(90deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(180deg);
+    opacity: 1
+  }
+}
+
+/* 非大奖翻转 */
+
+.cardList li.receive {
+  width: 100%;
+  height: 25%;
+  background: none;
+}
+
+.cardList li.receive span {
+  font-size: .54rem;
+  line-height: 1.08rem;
+  color: #722712;
+  text-align: center;
+  width: 4.5rem;
+  height: 1.08rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: auto;
+  background: url(../images/openBox-bg-receive.png) no-repeat center/contain;
+}
+
+.open-btn {
+  width: 3.88rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  font-size: .48rem;
+  color: #fae020;
+  margin: -1.35rem auto 0;
+  background: url("../images/open-btn.png") 0/100% 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.open-btn.bronze {
+  line-height: 1;
+  padding-top: .75rem;
+}
+
+.open-btn .num {
+  font-size: .36rem;
+  margin-top: .09rem;
+}
+
+.treasure-box {
+  position: relative;
+  z-index: 1;
+}
+
+.treasure-box.open {
+  z-index: 4;
+}
+
+.treasure-box-small li {
+  display: inline-block;
+  font-size: 0;
+}
+
+.treasure-box-small .img-border {
+  width: 2.32rem;
+  height: 2.26rem;
+  padding: .24rem .33rem;
+  margin: 0 auto;
+}
+
+.treasure-box-small li.active .img-border {
+  background: url("../images/selected-border.png") 0/100% 100%;
+}
+
+.treasure-box-small .img-border img {
+  height: 100%;
+}
+
+.treasure-box-small li {
+  position: relative;
+}
+
+.treasure-box-small .num, .box-tips {
+  display: inline-block;
+  min-width: 1.71rem;
+  height: .7rem;
+  background: url("../images/num-bg-l.png") no-repeat 0/.39rem 100%, url("../images/num-bg-r.png") no-repeat right/.39rem 100%;
+  padding: 0 .36rem;
+  margin-top: -.42rem;
+}
+
+.box-tips {
+  display: block;
+  width: 3rem;
+  margin: -.36rem auto 0;
+}
+
+.treasure-box-small .num > div, .box-tips > div {
+  font-size: .39rem;
+  color: #fff;
+  height: 100%;
+  line-height: .7rem;
+  background: url("../images/num-bg-middle.png") 0/auto 100%;
+  white-space: nowrap;
+}
+
+.treasure-box-small .num span, .box-tips span {
+  width: .35rem;
+  height: .33rem;
+  display: inline-block;
+  vertical-align: top;
+  margin: .18rem .06rem 0 0;
+  background: url("../images/openBox-icon-key-amount.png") no-repeat 0/100% 100%;
+}
+
+.treasure-box {
+  position: relative;
+  z-index: 0;
+}
+
+.treasure-box.open {
+  z-index: 3;
+}
+
+.treasure-box li.active .boxall {
+  animation: boxall 2.54s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.treasure-box li.active img.top {
+  animation: box-top 2.54s linear 1;
+  /*animation-fill-mode: forwards;*/
+}
+
+.treasure-box li.active img.bottom {
+  animation: box-bottom 2.54s linear 1;
+  /*animation-fill-mode: forwards;*/
+}
+
+.treasure-box li.active .mask {
+  animation: box-mask 2.54s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.treasure-box li.active img.lightyellow {
+  animation: box-lightyellow 2.54s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.treasure-box li.active img.card1 {
+  animation: box-card1 2.54s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.treasure-box li.active img.card2 {
+  animation: box-card2 2.54s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.treasure-box li.active img.card3 {
+  animation: box-card3 2.54s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.treasure-box li.active img.lightwhite {
+  animation: box-lightwhite 2.54s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.open-btn.active {
+  animation: box-btn 2.54s linear 1;
+  animation-fill-mode: forwards;
+}
+
+/****************************** 开宝箱动画 */
+/* 宝箱盖+宝箱底 */
+@keyframes boxall {
+  0% {
+    transform: scale(1)
+  }
+  48% {
+    transform: scale(1)
+  }
+  63% {
+    transform: scale(1.42)
+  }
+  84% {
+    filter: blur(0px);
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.42);
+    filter: blur(3px);
+    opacity: 0;
+  }
+}
+
+/* 宝箱盖 */
+@keyframes box-top {
+  0% {
+    transform: translate(0, 0px)
+  }
+  2% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg);
+    opacity: 1;
+  }
+  24% {
+    transform: rotate(0deg)
+  }
+  20% {
+    transform: translate(0.0rem, 0.0rem)
+  }
+  24% {
+    transform: rotate(10deg)
+  }
+  28% {
+    transform: translate(0.0rem, -1.5rem)
+  }
+  33% {
+    transform: rotate(0deg)
+  }
+  35% {
+    transform: translate(0.0rem, 0.0rem)
+  }
+  65% {
+    transform: rotate(0deg)
+  }
+  68% {
+    transform: translate(0.0rem, 0.0rem)
+  }
+  71% {
+    transform: rotate(10deg)
+  }
+  75% {
+    transform: translate(0.0rem, -.5rem)
+  }
+  78% {
+    transform: rotate(0deg)
+  }
+  81% {
+    transform: translate(0.0rem, 0.0rem)
+  }
+  86% {
+    transform: translate(0.0rem, 0.0rem);
+  }
+  90% {
+    transform: translate(0.0rem, -12.0rem);
+  }
+  100% {
+    transform: translate(0.0rem, -12.0rem);
+  }
+}
+
+/* 宝箱底 */
+@keyframes box-bottom {
+  0% {
+    transform: rotate(0deg) translate(0, 0px);
+  }
+  2% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg);
+    opacity: 1;
+  }
+  19% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg)
+  }
+  25% {
+    transform: translate(0.0rem, -1.4rem) rotate(10deg)
+  }
+  33% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg)
+  }
+  65% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg)
+  }
+  71% {
+    transform: translate(0.0rem, -.4rem) rotate(10deg)
+  }
+  78% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg)
+  }
+  84% {
+    transform: translate(0.0rem, 0.0rem);
+  }
+  90% {
+    transform: translate(0.0rem, 10.0rem)
+  }
+  100% {
+    transform: translate(0.0rem, 12.0rem);
+  }
+}
+
+/* 遮罩 */
+@keyframes box-mask {
+  0% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+  1% {
+    opacity: 0;
+  }
+  34% {
+    opacity: 0;
+  }
+  48% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* 黄光 */
+@keyframes box-lightyellow {
+  1% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  34% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  44% {
+    opacity: 1;
+  }
+  48% {
+    transform: scale(2.7)
+  }
+  67% {
+    opacity: 1;
+  }
+  81% {
+    opacity: 0;
+  }
+  86% {
+    transform: rotate(50deg)
+  }
+}
+
+/* 白光 */
+@keyframes box-lightwhite {
+  1% {
+    transform: translate(0.0rem, 0.0rem) scale(0.29);
+    opacity: 0;
+  }
+  59% {
+    opacity: 0;
+  }
+  64% {
+    transform: translate(0.0rem, 0.0rem) scale(1.35);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(0.0rem, 0.0rem) scale(0.18);
+    opacity: 0;
+  }
+}
+
+/* 白光 */
+@keyframes box-btn {
+  1% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  8% {
+    transform: scale(1)
+  }
+  11% {
+    transform: scale(0.9)
+  }
+  18% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  27% {
+    opacity: 0;
+  }
+}
+
+/* 卡牌一 */
+@keyframes box-card1 {
+  1% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg) scale(0.4);
+  }
+  77% {
+    transform: translate(0.0rem, 0.0rem) rotate(0deg) scale(0.4);
+    opacity: 0;
+    filter: blur(0px);
+  }
+  81% {
+    opacity: 1;
+  }
+  85% {
+    transform: rotate(0deg)
+  }
+  86% {
+    transform: translate(0.0rem, 0rem) scale(0.4)
+  }
+  96% {
+    filter: blur(3px);
+  }
+  97% {
+    transform: translate(0.0rem, -7.04rem) scale(1.5);
+    opacity: 1;;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translate(0.0rem, -18.04rem) scale(1.5);
+    opacity: 1;;
+    filter: blur(0px);
+  }
+}
+
+/* 卡牌二 */
+@keyframes box-card2 {
+  1% {
+    transform: translate(0.0rem, -0.15rem) rotate(0deg) scale(0.4);
+    opacity: 0;
+  }
+  77% {
+    transform: translate(0.0rem, -0.15rem) rotate(0deg) scale(0.4);
+    opacity: 0;
+    filter: blur(0px);
+  }
+  81% {
+    opacity: 1;
+  }
+  85% {
+    transform: rotate(0deg)
+  }
+  86% {
+    transform: translate(0.0rem, 0.0rem) scale(0.4);
+  }
+  96% {
+    filter: blur(3px);
+  }
+  97% {
+    transform: translate(0.0rem, 0.8rem) scale(1.5);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translate(0.0rem, -18.8rem) scale(1.5);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* 卡牌三 */
+@keyframes box-card3 {
+  1% {
+    transform: translate(0.0rem, 0.15rem) rotate(0deg) scale(0.4);
+    opacity: 0;
+  }
+  77% {
+    transform: translate(0.0rem, 0.15rem) rotate(0deg) scale(0.4);
+    opacity: 0;
+    filter: blur(0px);
+  }
+  81% {
+    opacity: 1;
+  }
+  85% {
+    transform: rotate(0deg)
+  }
+  86% {
+    transform: translate(0.0rem, 0.0rem) scale(0.4);
+  }
+  96% {
+    filter: blur(3px);
+  }
+  97% {
+    transform: translate(0.0rem, 8.8rem) scale(1.5);
+    opacity: 1;;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translate(0.0rem, -18.8rem) scale(1.5);
+    opacity: 1;;
+    filter: blur(0px);
+  }
+}

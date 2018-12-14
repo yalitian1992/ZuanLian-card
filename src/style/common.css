@@ -1,0 +1,150 @@
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4, h5, h6, i, b, textarea, button, input, select, figure, figcaption, img {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+}
+
+button, input, textarea, select {
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.clearfix:before, .clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.pull-left {
+  float: left !important
+}
+
+.pull-right {
+  float: right !important
+}
+
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+.text-overflow-multi {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  background: #18140B;
+  /*background: #991103;*/
+}
+
+.align-l {
+  text-align: left;
+}
+
+.align-c {
+  text-align: center;
+}
+
+.align-r {
+  text-align: right;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+#petalbox img {
+  width: auto;
+}
+
+/*轻提示*/
+.toast-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1150;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  display: flex;
+  font-size: .42rem;
+  color: #e2b23f;
+}
+
+.toast-alert .side {
+  width: .45rem;
+  background: url("../../src/images/alert-left.png") 0/100% 100%;
+}
+
+.toast-alert .side-r {
+  background: url("../../src/images/alert-right.png") 0/100% 100%;
+}
+
+.toast-alert .con {
+  flex: 1;
+  padding: .15rem 0 .21rem;
+  line-height: .9rem;
+  white-space: nowrap;
+  background: url("../../src/images/alert-center.png") 0/100% 100%;
+}
+
+/* 公共大标题 */
+.big-title {
+  position: fixed;
+  z-index: 333;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.48rem;
+}
+
+.big-title h1 {
+  font-size: .55rem;
+  color: #FCFBFB;
+  width: 100%;
+  height: .66rem;
+  position: absolute;
+  bottom: 0.52rem;
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: .08rem;
+}
+
+/* 页面内容可视区域 */
+#main-box {
+  padding: 3.04rem 1.33rem 2.17rem 1.37rem;
+}
+
+.body-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/*返回按钮*/
+.back-btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1111;
+  width: 1.65rem;
+  height: 1.65rem;
+  background: url("../images/back.png");
+  background-size: cover;
+}
